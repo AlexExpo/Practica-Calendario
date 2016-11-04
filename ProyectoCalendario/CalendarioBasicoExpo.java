@@ -24,11 +24,33 @@ public class CalendarioBasicoExpo
         mes = 01;
         anno = 01;
     }
+    /**
+     * Solo van a contemplarse años desde 01 hasta 99.
+     */
     public void fijarFecha(int nuevoDia, int nuevoMes, int nuevoAnno)
     {
         dia = nuevoDia;
         mes = nuevoMes;
         anno = nuevoAnno;
+    }
+    public void avanzarFecha()
+    {
+        if (dia == 30) {
+            dia = 01;
+            mes = mes + 01;
+            if (mes == 12) {
+                mes = 01;
+                anno = anno + 01;
+                if (anno == 99) {
+                    dia = 01;
+                    mes = 01;
+                    anno = 01;
+                }
+            }
+        }
+        else {
+            dia = dia + 1;
+        }
     }
 
 }
