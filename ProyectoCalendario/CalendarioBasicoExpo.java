@@ -82,7 +82,7 @@ public class CalendarioBasicoExpo
             else {
                 mostrarAnno = anno + "";
                 }
-        return mostrarDia + "-" + mostrarMes + "-" + mostrarAnno + "-";
+        return mostrarDia + "-" + mostrarMes + "-" + mostrarAnno;
 
 }}
     
