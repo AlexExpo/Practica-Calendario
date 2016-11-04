@@ -13,6 +13,12 @@ public class CalendarioBasicoExpo
     private int mes;
     
     private int anno;
+    
+    private String mostrarDia;
+    
+    private String mostrarMes;
+    
+    private String mostrarAnno;
 
     /**
      * Constructor for objects of class Calendario
@@ -38,7 +44,7 @@ public class CalendarioBasicoExpo
         if (dia == 30) {
             dia = 01;
             mes = mes + 01;
-            if (mes == 12) {
+            if (mes == 13) {
                 mes = 01;
                 anno = anno + 01;
                 if (anno == 99) {
@@ -52,5 +58,31 @@ public class CalendarioBasicoExpo
             dia = dia + 1;
         }
     }
+    public String mostrarFecha()
+    {
+        String mostrarDia;
+        String mostrarMes;
+        String mostrarAnno;
+        
+        if (dia < 10) {
+            mostrarDia = "0" + dia;
+        }
+        else {
+            mostrarDia = dia + "";
+        }
+        if (mes <10) {
+            mostrarMes = "0" + mes;
+        }
+        else {
+        mostrarMes = mes + "";
+        }
+        if (anno < 10) {
+            mostrarAnno = "00" + anno;
+            }
+            else {
+                mostrarAnno = anno + "";
+                }
+        return mostrarDia + "-" + mostrarMes + "-" + mostrarAnno + "-";
 
-}
+}}
+    

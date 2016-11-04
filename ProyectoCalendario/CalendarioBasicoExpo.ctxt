@@ -7,4 +7,6 @@ comment1.target=void\ fijarFecha(int,\ int,\ int)
 comment1.text=\r\n\ Solo\ van\ a\ contemplarse\ a\u00F1os\ desde\ 01\ hasta\ 99.\r\n
 comment2.params=
 comment2.target=void\ avanzarFecha()
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ mostrarFecha()
+numComments=4
