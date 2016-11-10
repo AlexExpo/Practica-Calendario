@@ -8,17 +8,11 @@
 public class CalendarioBasicoExpo
 {
     // instance variables - replace the example below with your own
-    private int dia;
-    
-    private int mes;
-    
-    private int anno;
-    
-    private String mostrarDia;
-    
-    private String mostrarMes;
-    
-    private String mostrarAnno;
+    private DisplayDosDigitos dia;
+
+    private DisplayDosDigitos mes;
+
+    private DisplayDosDigitos anno;
 
     /**
      * Constructor for objects of class Calendario
@@ -26,63 +20,38 @@ public class CalendarioBasicoExpo
     public CalendarioBasicoExpo()
     {
         // initialise instance variables
-        dia = 01;
-        mes = 01;
-        anno = 01;
+        dia = new DisplayDosDigitos(31);
+        mes = new DisplayDosDigitos(13);
+        anno = new DisplayDosDigitos(100);
+
     }
+
     /**
      * Solo van a contemplarse años desde 01 hasta 99.
      */
     public void fijarFecha(int nuevoDia, int nuevoMes, int nuevoAnno)
     {
-        dia = nuevoDia;
-        mes = nuevoMes;
-        anno = nuevoAnno;
+        dia.setValor(nuevoDia);
+        mes.setValor(nuevoMes);
+        anno.setValor(nuevoAnno);
     }
+
     public void avanzarFecha()
     {
-        if (dia == 30) {
-            dia = 01;
-            mes = mes + 01;
-            if (mes == 13) {
-                mes = 01;
-                anno = anno + 01;
-                if (anno == 99) {
-                    dia = 01;
-                    mes = 01;
-                    anno = 01;
-                }
+        dia.incrementaValor();
+        if(dia.getValor() == 1) {
+            mes.incrementaValor();
+            if(mes.getValor() == 1) {
+                anno.incrementaValor();
             }
-        }
-        else {
-            dia = dia + 1;
         }
     }
+
     public String mostrarFecha()
     {
-        String mostrarDia;
-        String mostrarMes;
-        String mostrarAnno;
-        
-        if (dia < 10) {
-            mostrarDia = "0" + dia;
-        }
-        else {
-            mostrarDia = dia + "";
-        }
-        if (mes <10) {
-            mostrarMes = "0" + mes;
-        }
-        else {
-        mostrarMes = mes + "";
-        }
-        if (anno < 10) {
-            mostrarAnno = "00" + anno;
-            }
-            else {
-                mostrarAnno = anno + "";
-                }
-        return mostrarDia + "-" + mostrarMes + "-" + mostrarAnno;
 
-}}
-    
+        return dia.getValorDelDisplay() + "-" + mes.getValorDelDisplay() + "-" + anno.getValorDelDisplay();
+
+    }
+}
+
